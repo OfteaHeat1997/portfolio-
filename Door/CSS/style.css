@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #door-body {
+    height: 100vh;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bigdoor {
+    height: 600px;
+    width: 550px;
+    border: 5px solid #050505;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .door {
+    background-color: rgb(41, 41, 41); /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgb(19, 17, 17), rgba(141, 128, 136, 0.562));
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    /* inner layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #left-door {
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+    /* transition */
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+  
+  #right-door {
+    top: 0;
+    right: 0;
+    border-left: 1px solid black;
+    /* transition */
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+  
+  .shape {
+    border: 4px solid black;
+    background-color: rgb(53, 49, 49); /* For browsers that do not support gradients */
+    background-image: linear-gradient(rgb(19, 17, 17), rgba(255, 0, 157, 0.562));
+    width: 200px;
+    height: 180px;
+  }
+  
+  .knob {
+    width: 10px;
+    height: 50px;
+    background-color: #D7DADE;
+    position: absolute;
+  }
+  
+  #left-knob {
+    top: 50%;
+    right: 10px;
+  }
+  
+  #right-knob {
+    top: 50%;
+    left: 10px;
+  }
+  
+  /* Door swing effect */
+  .bigdoor:hover #left-door{
+    transform: rotateY(-140deg);
+  }
+  
+  .bigdoor:hover #right-door{
+    transform: rotateY(140deg);
+  }
+  
